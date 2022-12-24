@@ -10,7 +10,7 @@ dynamodb = boto3.resource(
 
 table = dynamodb.create_table(
     TableName="heartbeat",
-    KeySchema=[{"AttributeName": "user_id", "KeyType": "HASH"}],  # Partition key
+    KeySchema=[{"AttributeName": "heartbeat_id", "KeyType": "HASH"}],  # Partition key
     AttributeDefinitions=[
         {"AttributeName": "user_id", "AttributeType": "N"},
     ],
