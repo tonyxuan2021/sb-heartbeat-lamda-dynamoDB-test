@@ -1,0 +1,8 @@
+.caringvenv/*
+.vscode/*
+.serverless
+node_modules
+*.pyo
+*.pyc
+serverless.yml
+venv

@@ -1,0 +1,634 @@
+[
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980219,
+    "latitude": 18.034,
+    "longitude": -76.794,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980224,
+    "latitude": 18.0338,
+    "longitude": -76.794,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980229,
+    "latitude": 18.0336,
+    "longitude": -76.794,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980234,
+    "latitude": 18.0335,
+    "longitude": -76.794,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980239,
+    "latitude": 18.0332,
+    "longitude": -76.7943,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980244,
+    "latitude": 18.0331,
+    "longitude": -76.7943,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980249,
+    "latitude": 18.0329,
+    "longitude": -76.7939,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980254,
+    "latitude": 18.0323,
+    "longitude": -76.7925,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980259,
+    "latitude": 18.0313,
+    "longitude": -76.7901,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980264,
+    "latitude": 18.031,
+    "longitude": -76.7895,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980269,
+    "latitude": 18.0309,
+    "longitude": -76.7894,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980274,
+    "latitude": 18.0308,
+    "longitude": -76.789,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980279,
+    "latitude": 18.0304,
+    "longitude": -76.7879,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980284,
+    "latitude": 18.0299,
+    "longitude": -76.787,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980289,
+    "latitude": 18.0299,
+    "longitude": -76.7868,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980294,
+    "latitude": 18.0302,
+    "longitude": -76.7864,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980299,
+    "latitude": 18.0304,
+    "longitude": -76.7862,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980304,
+    "latitude": 18.0306,
+    "longitude": -76.7858,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980309,
+    "latitude": 18.0311,
+    "longitude": -76.7851,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980314,
+    "latitude": 18.0313,
+    "longitude": -76.7842,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980319,
+    "latitude": 18.0314,
+    "longitude": -76.7842,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980324,
+    "latitude": 18.0314,
+    "longitude": -76.7841,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980329,
+    "latitude": 18.0315,
+    "longitude": -76.7838,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980334,
+    "latitude": 18.0317,
+    "longitude": -76.7832,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980339,
+    "latitude": 18.0318,
+    "longitude": -76.7829,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980344,
+    "latitude": 18.0318,
+    "longitude": -76.7827,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980349,
+    "latitude": 18.0318,
+    "longitude": -76.7826,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980354,
+    "latitude": 18.0318,
+    "longitude": -76.7823,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980359,
+    "latitude": 18.0319,
+    "longitude": -76.7819,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980364,
+    "latitude": 18.0321,
+    "longitude": -76.7814,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980369,
+    "latitude": 18.0321,
+    "longitude": -76.7813,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980374,
+    "latitude": 18.0324,
+    "longitude": -76.7809,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980379,
+    "latitude": 18.0325,
+    "longitude": -76.7807,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980384,
+    "latitude": 18.0325,
+    "longitude": -76.7806,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980389,
+    "latitude": 18.0325,
+    "longitude": -76.7804,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980394,
+    "latitude": 18.0324,
+    "longitude": -76.7803,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980399,
+    "latitude": 18.0321,
+    "longitude": -76.7801,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980404,
+    "latitude": 18.0318,
+    "longitude": -76.7798,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980409,
+    "latitude": 18.0318,
+    "longitude": -76.7796,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980414,
+    "latitude": 18.0317,
+    "longitude": -76.7792,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980419,
+    "latitude": 18.0317,
+    "longitude": -76.7787,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980424,
+    "latitude": 18.0315,
+    "longitude": -76.7777,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980429,
+    "latitude": 18.0315,
+    "longitude": -76.7776,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980434,
+    "latitude": 18.0313,
+    "longitude": -76.777,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980439,
+    "latitude": 18.0313,
+    "longitude": -76.7768,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980444,
+    "latitude": 18.0311,
+    "longitude": -76.7763,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980449,
+    "latitude": 18.0309,
+    "longitude": -76.7759,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980454,
+    "latitude": 18.0308,
+    "longitude": -76.7756,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980459,
+    "latitude": 18.0304,
+    "longitude": -76.7758,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980464,
+    "latitude": 18.0301,
+    "longitude": -76.776,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980469,
+    "latitude": 18.0299,
+    "longitude": -76.7762,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980474,
+    "latitude": 18.0298,
+    "longitude": -76.7765,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980479,
+    "latitude": 18.0295,
+    "longitude": -76.7768,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980484,
+    "latitude": 18.029,
+    "longitude": -76.7771,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980489,
+    "latitude": 18.0288,
+    "longitude": -76.7774,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980494,
+    "latitude": 18.0282,
+    "longitude": -76.7778,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980499,
+    "latitude": 18.028,
+    "longitude": -76.7779,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980504,
+    "latitude": 18.0275,
+    "longitude": -76.7782,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980509,
+    "latitude": 18.0272,
+    "longitude": -76.7784,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980514,
+    "latitude": 18.0268,
+    "longitude": -76.7759,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980519,
+    "latitude": 18.0266,
+    "longitude": -76.7747,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980524,
+    "latitude": 18.0265,
+    "longitude": -76.7741,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980529,
+    "latitude": 18.0266,
+    "longitude": -76.7721,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980219,
+    "latitude": 17.9996,
+    "longitude": -76.8869,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980224,
+    "latitude": 17.9995,
+    "longitude": -76.8875,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980229,
+    "latitude": 17.9995,
+    "longitude": -76.8882,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980234,
+    "latitude": 17.9995,
+    "longitude": -76.8888,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980239,
+    "latitude": 17.9994,
+    "longitude": -76.8892,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980244,
+    "latitude": 17.9993,
+    "longitude": -76.8905,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980249,
+    "latitude": 17.9994,
+    "longitude": -76.8905,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980254,
+    "latitude": 17.9998,
+    "longitude": -76.8909,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980259,
+    "latitude": 18.0005,
+    "longitude": -76.8916,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980264,
+    "latitude": 18.0009,
+    "longitude": -76.892,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980269,
+    "latitude": 18.001,
+    "longitude": -76.8922,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980274,
+    "latitude": 18.0012,
+    "longitude": -76.8924,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980279,
+    "latitude": 18.0014,
+    "longitude": -76.8925,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980284,
+    "latitude": 18.0016,
+    "longitude": -76.8926,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980289,
+    "latitude": 18.0017,
+    "longitude": -76.8926,
+    "speed": 40
+  },
+  {
+    "user_id": 1,
+    "user_role": "driver",
+    "time_stamp": 1669980294,
+    "latitude": 18.0019,
+    "longitude": -76.8926,
+    "speed": 40
+  }
+]
