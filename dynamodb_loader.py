@@ -27,9 +27,9 @@ with open("heartbeat_data.json") as json_file:
                 "user_id": user_id,
                 "user_role": user_role,
                 "time_stamp": time_stamp,
-                "latitude": latitude,
-                "longitude": longitude,
-                "speed": speed,
+                "latitude": Decimal(latitude),
+                "longitude": Decimal(longitude),
+                "speed": int(speed),
             }
         )
         print("Put item succeeded")

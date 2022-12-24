@@ -1,6 +1,7 @@
 from flask import Flask
 import boto3
 
+app = Flask(__name__)
 
 dynamodb = boto3.resource(
     "dynamodb",
@@ -10,9 +11,13 @@ dynamodb = boto3.resource(
 
 table = dynamodb.create_table(
     TableName="heartbeat",
-    KeySchema=[{"AttributeName": "heartbeat_id", "KeyType": "HASH"}],  # Partition key
+    KeySchema=[
+        {"AttributeName": "user_id", "KeyType": "HASH"},
+        {"AttributeName": "time_stamp", "KeyType": "RANGE"},
+    ],  # Partition key
     AttributeDefinitions=[
         {"AttributeName": "user_id", "AttributeType": "N"},
+        {"AttributeName": "time_stamp", "AttributeType": "N"},
     ],
     ProvisionedThroughput={"ReadCapacityUnits": 5, "WriteCapacityUnits": 5},
 )

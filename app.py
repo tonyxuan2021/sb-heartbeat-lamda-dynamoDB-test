@@ -1,11 +1,15 @@
 import json
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import boto3
 from decimal import Decimal
+import logging
 
-
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 app = Flask(__name__)
+
+MAX_LOOKBACK = 10
 
 dynamodb = boto3.resource(
     "dynamodb",
@@ -15,9 +19,15 @@ dynamodb = boto3.resource(
 table = dynamodb.Table("heartbeat")
 
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+@app.route("/heartbeat")
+@cross_origin()
+def get_all_heartbeat():
+    """
+    returns all citizen items present in dynamodb
+    """
+    response = table.scan()["Items"]
+    logger.info("All heartbeat data returned")
+    return jsonify(response)
 
 
 @app.route("/heartbeat", methods=["POST"])
@@ -53,3 +63,43 @@ def heartbeatpost():
             }
         )
         return "Heartbeat data added successfully", 200
+
+
+# GET heartbeats by user_id
+@app.route("/heartbeat/<int:user_id>", methods=["GET"])
+def get_heartbeats_by_user_id(user_id):
+    # user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
+    user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
+    lookback = request.args.get("lookback")
+
+    # check if user_id exists
+    if not user_exists:
+        return f"No heartbeats found for user_id: {user_id}.", 400
+
+    # check if lookback parameter is valid type and within range
+    if lookback:
+        try:
+            lookback = int(lookback)
+        except ValueError:
+            return "Invalid type, lookback must be an integer", 400
+
+        if lookback > MAX_LOOKBACK:
+            return f"Maximum lookback limit exceeded (max: {MAX_LOOKBACK})", 400
+
+        # get multiple heartbeats
+        data = get_latest_heartbeats(user_id, lookback)
+
+    else:
+        # get single heartbeat
+        data = get_latest_heartbeats(user_id)
+
+    return jsonify(data)
+
+
+def get_latest_heartbeats(user_id, lookback=1):
+    return (
+        Heartbeat.query.filter_by(user_id=user_id)
+        .order_by(Heartbeat.time_stamp.desc())
+        .limit(lookback)
+        .all()
+    )
