@@ -2,6 +2,7 @@ import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import boto3
+from boto3.dynamodb.conditions import Key
 from decimal import Decimal
 import logging
 
@@ -66,40 +67,53 @@ def heartbeatpost():
 
 
 # GET heartbeats by user_id
-@app.route("/heartbeat/<int:user_id>", methods=["GET"])
+@app.route("/heartbeat/<user_id>", methods=["GET"])
+@cross_origin()
 def get_heartbeats_by_user_id(user_id):
     # user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
-    user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
-    lookback = request.args.get("lookback")
+    user_id = int(user_id)
 
-    # check if user_id exists
-    if not user_exists:
-        return f"No heartbeats found for user_id: {user_id}.", 400
+    response = table.query(KeyConditionExpression=Key("user_id").eq(user_id))
 
-    # check if lookback parameter is valid type and within range
-    if lookback:
-        try:
-            lookback = int(lookback)
-        except ValueError:
-            return "Invalid type, lookback must be an integer", 400
+    return jsonify(response["Items"])
 
-        if lookback > MAX_LOOKBACK:
-            return f"Maximum lookback limit exceeded (max: {MAX_LOOKBACK})", 400
+    # response = table.query(KeyConditionExpression=Key("user_id").eq(2))
 
-        # get multiple heartbeats
-        data = get_latest_heartbeats(user_id, lookback)
-
-    else:
-        # get single heartbeat
-        data = get_latest_heartbeats(user_id)
-
-    return jsonify(data)
+    # for i in response["Items"]:
+    #     return jsonify(i["user_id"], ":", i["time_stamp"])
 
 
-def get_latest_heartbeats(user_id, lookback=1):
-    return (
-        Heartbeat.query.filter_by(user_id=user_id)
-        .order_by(Heartbeat.time_stamp.desc())
-        .limit(lookback)
-        .all()
-    )
+# user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
+# lookback = request.args.get("lookback")
+
+# check if user_id exists
+# if not user_exists:
+#     return f"No heartbeats found for user_id: {user_id}.", 400
+
+# check if lookback parameter is valid type and within range
+# if lookback:
+#     try:
+#         lookback = int(lookback)
+#     except ValueError:
+#         return "Invalid type, lookback must be an integer", 400
+
+#     if lookback > MAX_LOOKBACK:
+#         return f"Maximum lookback limit exceeded (max: {MAX_LOOKBACK})", 400
+
+#     # get multiple heartbeats
+#     data = get_latest_heartbeats(user_id, lookback)
+
+# else:
+#     # get single heartbeat
+#     data = get_latest_heartbeats(user_id)
+
+# return jsonify(data)
+
+
+# def get_latest_heartbeats(user_id, lookback=1):
+#     return (
+#         Heartbeat.query.filter_by(user_id=user_id)
+#         .order_by(Heartbeat.time_stamp.desc())
+#         .limit(lookback)
+#         .all()
+#     )
