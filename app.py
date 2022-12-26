@@ -73,47 +73,40 @@ def get_heartbeats_by_user_id(user_id):
     # user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
     user_id = int(user_id)
 
-    response = table.query(KeyConditionExpression=Key("user_id").eq(user_id))
+    user_exists = table.query(KeyConditionExpression=Key("user_id").eq(user_id))
 
-    return jsonify(response["Items"])
+    lookback = request.args.get("lookback")
 
-    # response = table.query(KeyConditionExpression=Key("user_id").eq(2))
+    # check if user_id exists
+    if not user_exists:
+        return "No heartbeats found for this user_id", 400
 
-    # for i in response["Items"]:
-    #     return jsonify(i["user_id"], ":", i["time_stamp"])
+    if lookback:
+        try:
+            lookback = int(lookback)
+        except ValueError:
+            return "Invalid type, lookback must be an integer", 400
 
+        if lookback > MAX_LOOKBACK:
+            return f"Maximum lookback limit exceeded (max: {MAX_LOOKBACK})", 400
 
-# user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
-# lookback = request.args.get("lookback")
+        # get multiple heartbeats
+        data = get_latest_heartbeats(user_id, lookback)
 
-# check if user_id exists
-# if not user_exists:
-#     return f"No heartbeats found for user_id: {user_id}.", 400
+    else:
+        # get single heartbeat
+        data = get_latest_heartbeats(user_id)
+
+    return jsonify(data["Items"])
+
 
 # check if lookback parameter is valid type and within range
-# if lookback:
-#     try:
-#         lookback = int(lookback)
-#     except ValueError:
-#         return "Invalid type, lookback must be an integer", 400
-
-#     if lookback > MAX_LOOKBACK:
-#         return f"Maximum lookback limit exceeded (max: {MAX_LOOKBACK})", 400
-
-#     # get multiple heartbeats
-#     data = get_latest_heartbeats(user_id, lookback)
-
-# else:
-#     # get single heartbeat
-#     data = get_latest_heartbeats(user_id)
-
-# return jsonify(data)
 
 
-# def get_latest_heartbeats(user_id, lookback=1):
-#     return (
-#         Heartbeat.query.filter_by(user_id=user_id)
-#         .order_by(Heartbeat.time_stamp.desc())
-#         .limit(lookback)
-#         .all()
-#     )
+def get_latest_heartbeats(user_id, lookback=1):
+    user_id = int(user_id)
+    return table.query(
+        KeyConditionExpression=Key("user_id").eq(user_id),
+        ScanIndexForward=False,
+        Limit=lookback,
+    )
