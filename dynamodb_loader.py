@@ -10,10 +10,14 @@ dynamodb = boto3.resource(
 )
 table = dynamodb.Table("heartbeat")
 
+# open the JSON file that has some heartbeat testing data, load this JSON file
 with open("heartbeat_data.json") as json_file:
     heartbeat_data = json.load(json_file)
+
+    # convert JSON data where it has float data structure to decimal data structure since AWS DynamoDB does not support float type, and convert it to a dictionary
     heartbeat_data_decimal = json.loads(json.dumps(heartbeat_data), parse_float=Decimal)
 
+    # loop over the heartbeat list, and write all heartbeat data to dynamoDB heartbeat table.
     for heartbeat_record in heartbeat_data_decimal:
         user_id = heartbeat_record["user_id"]
         user_role = heartbeat_record["user_role"]
@@ -32,16 +36,3 @@ with open("heartbeat_data.json") as json_file:
                 "speed": int(speed),
             }
         )
-        print("Put item succeeded")
-        print(json.dumps(response, indent=4))
-
-
-# heartbeat_data_decimal = json.loads(json.dumps(heartbeat_data), parse_float=Decimal)
-
-# find the JSON file in folder and read it
-
-# convert JSON data where it has float -> decimal since AWS DynamoDB does not support float type, and convert JSON file to disctionary
-
-# loop over the converted heartbeat data, and assign a name to each property in the dictionary
-
-# write all heartbeat data to DynamoDB

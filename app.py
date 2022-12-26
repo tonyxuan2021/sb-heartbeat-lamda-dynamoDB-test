@@ -6,12 +6,16 @@ from boto3.dynamodb.conditions import Key
 from decimal import Decimal
 import logging
 
+# logger is used to debug Lambda functions at AWS CloudWatch
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+
 app = Flask(__name__)
 
+# set max lookback heartbeat record to 10
 MAX_LOOKBACK = 10
 
+# retrive the heartbeat table from DynamoDB
 dynamodb = boto3.resource(
     "dynamodb",
     region_name="us-east-1",
@@ -19,18 +23,17 @@ dynamodb = boto3.resource(
 )
 table = dynamodb.Table("heartbeat")
 
-
+# returns all citizen items present in dynamodb
 @app.route("/heartbeat")
 @cross_origin()
 def get_all_heartbeat():
-    """
-    returns all citizen items present in dynamodb
-    """
+
     response = table.scan()["Items"]
     logger.info("All heartbeat data returned")
     return jsonify(response)
 
 
+# create an endpoint that has the business logic to accept data from FE and write to heartbeat table
 @app.route("/heartbeat", methods=["POST"])
 @cross_origin()
 def heartbeatpost():
@@ -70,17 +73,20 @@ def heartbeatpost():
 @app.route("/heartbeat/<user_id>", methods=["GET"])
 @cross_origin()
 def get_heartbeats_by_user_id(user_id):
-    # user_exists = Heartbeat.query.filter_by(user_id=user_id).first()
+    # convert user_id to a integer, otherwise the post request will be return a 500 error message
     user_id = int(user_id)
 
+    # make a query from heartbeat table, and return all the heartbeat record that match with the queried user_id
     user_exists = table.query(KeyConditionExpression=Key("user_id").eq(user_id))
 
+    # create a lookback variable to retrive the lookback value after the question mark from the endpoint address
     lookback = request.args.get("lookback")
 
     # check if user_id exists
     if not user_exists:
         return "No heartbeats found for this user_id", 400
 
+    # check if lookback parameter is valid type and within range
     if lookback:
         try:
             lookback = int(lookback)
@@ -97,16 +103,17 @@ def get_heartbeats_by_user_id(user_id):
         # get single heartbeat
         data = get_latest_heartbeats(user_id)
 
+    # return requested heartbeat data to user
     return jsonify(data["Items"])
-
-
-# check if lookback parameter is valid type and within range
 
 
 def get_latest_heartbeats(user_id, lookback=1):
     user_id = int(user_id)
     return table.query(
+        # make a query from heartbeat table, and return all the heartbeat record that match with the queried user_id
         KeyConditionExpression=Key("user_id").eq(user_id),
+        # sort time_stamp(Sort key) by decending order
         ScanIndexForward=False,
+        # set the number of returning data limit
         Limit=lookback,
     )
