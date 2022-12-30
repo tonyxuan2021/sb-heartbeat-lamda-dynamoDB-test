@@ -23,7 +23,7 @@ dynamodb = boto3.resource(
 )
 table = dynamodb.Table("heartbeat")
 
-# returns all citizen items present in dynamodb
+# returns all heartbeat data in dynamodb
 @app.route("/heartbeat")
 @cross_origin()
 def get_all_heartbeat():
