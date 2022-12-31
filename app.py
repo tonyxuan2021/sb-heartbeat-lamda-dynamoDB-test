@@ -55,18 +55,8 @@ def heartbeatpost():
     ):
         return "Unable to write to server due to missing attribute(s)", 400
 
-    else:
-        table.put_item(
-            Item={
-                "user_id": user_id,
-                "user_role": user_role,
-                "time_stamp": time_stamp,
-                "latitude": Decimal(str(latitude)),
-                "longitude": Decimal(str(longitude)),
-                "speed": speed,
-            }
-        )
-        return "Heartbeat data added successfully", 200
+    post_heartbeat(user_id, user_role, time_stamp, latitude, longitude, speed)
+    return "Heartbeat data added successfully", 200
 
 
 # GET heartbeats by user_id
@@ -116,4 +106,18 @@ def get_latest_heartbeats(user_id, lookback=1):
         ScanIndexForward=False,
         # set the number of returning data limit
         Limit=lookback,
+    )
+
+
+def post_heartbeat(id, role, timestamp, lat, long, speed):
+
+    table.put_item(
+        Item={
+            "user_id": id,
+            "user_role": role,
+            "time_stamp": timestamp,
+            "latitude": Decimal(str(lat)),
+            "longitude": Decimal(str(long)),
+            "speed": speed,
+        }
     )
